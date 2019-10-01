@@ -30,17 +30,7 @@ picturedisplay("el-capitan.png")
 #somewhere in the code (and adding whatever else you want).
 #Commit and push your “buggy” file to the repository you just set up.
 
-function picturedisplay(string)
-    clf()
-    figure(1)
-    picture= imread(string)
-    imshow(picture)
-    red = picture[:,:,1]
-    blue = picture[:,:,3]
-    green = picture[:,:,2]
-    return(red, green, blue)
-    println("BUG BUG BUG")
-end
+
 picturedisplay("el-capitan.png")
 
 #bullet 4
