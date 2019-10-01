@@ -1,0 +1,71 @@
+#Exercise 3
+picture= imread("el-capitan.png")
+imshow(picture)
+size(picture)
+
+#bullet 1
+#Write a function that takes as input a string representing the filename, and
+#then loads the image file, displays it, and extracts the red, blue, and green
+#channels into separate variables, and returns those variables.
+#In other words, your function should take an image name as an argument and output
+# three separate variables, that in the case of our example image would each be a
+#360x640 matrix. Commit and push your file to the repository you just set up.
+
+function picturedisplay(string)
+    clf()
+    figure(1)
+    picture= imread(string)
+    imshow(picture)
+    red = picture[:,:,1]
+    blue = picture[:,:,3]
+    green = picture[:,:,2]
+    return(red, green, blue)
+end
+picturedisplay("el-capitan.png")
+
+
+#bullet 3
+#Let’s say you think you can optimize this function in some way,
+#but accidentally break it. Simulate this by adding println("BUG BUG BUG")
+#somewhere in the code (and adding whatever else you want).
+#Commit and push your “buggy” file to the repository you just set up.
+
+function picturedisplay(string)
+    clf()
+    figure(1)
+    picture= imread(string)
+    imshow(picture)
+    red = picture[:,:,1]
+    blue = picture[:,:,3]
+    green = picture[:,:,2]
+    return(red, green, blue)
+    println("BUG BUG BUG")
+end
+picturedisplay("el-capitan.png")
+
+#bullet 4
+#Using version control commands in GitKraken, revert back to the “bug-free” version
+#of your code. Think about whether this was real buggy code.
+#Would you want to execute a soft, mixed, or hard reversion?
+
+
+#bullet 5
+#Make a new 360x640x3 matrix; let’s call this image2.
+#Set image2[:,:,1] to be the G channel from the original image, image2[:,:,2]
+# to be the B channel from the original image, and image2[:,:,3] to be the R channel
+# from the original image.
+image2= zeros(360, 640, 3)
+for i= 1:length(image2)
+    image2 = push!(picture)
+end
+image2= copy()
+function image2display(image)
+    clf()
+    figure(1)
+    imshow(image)
+    G = picture[:,:,1]
+    R = picture[:,:,3]
+    B = picture[:,:,2]
+    return(R, G, B)
+end
+image2display(image2)
