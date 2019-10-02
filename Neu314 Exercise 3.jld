@@ -44,10 +44,31 @@ end
 picturedisplay("el-capitan.png")
 
 #bullet 4
-#Using version control commands in GitKraken, revert back to the “bug-free” version
-#of your code. Think about whether this was real buggy code.
-#Would you want to execute a soft, mixed, or hard reversion?
+#Let’s say you think you can optimize this function in some way,
+#but accidentally break it.
+#Simulate this by adding println("BUG BUG BUG") somewhere in the code (and adding whatever else you want).
+#Stage and commit your “buggy” file.
 
+
+
+
+#Now, using version control commands in GitKraken,
+#perform a git reset --mixed to undo your commit and delete the lines you added to get a “bug-free” version of your code.
+# Also add the line println("Reset with git reset --mixed"). Think about whether this was real buggy code --
+#what would be the value of this reset?
+
+function picturedisplay(string)
+    clf()
+    figure(1)
+    picture= imread(string)
+    imshow(picture)
+    red = picture[:,:,1]
+    blue = picture[:,:,3]
+    green = picture[:,:,2]
+    return(red, green, blue)
+    println("BUG BUG BUG")
+end
+picturedisplay("el-capitan.png")
 
 #bullet 5
 #Make a new 360x640x3 matrix; let’s call this image2.
