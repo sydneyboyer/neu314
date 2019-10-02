@@ -67,6 +67,7 @@ function picturedisplay(string)
     green = picture[:,:,2]
     return(red, green, blue)
     println("BUG BUG BUG")
+    println("Reset with git reset--mixed")
 end
 picturedisplay("el-capitan.png")
 
@@ -76,17 +77,8 @@ picturedisplay("el-capitan.png")
 # to be the B channel from the original image, and image2[:,:,3] to be the R channel
 # from the original image.
 image2= zeros(360, 640, 3)
-for i= 1:length(image2)
-    image2 = push!(picture)
-end
-image2= copy()
-function image2display(image)
-    clf()
-    figure(1)
-    imshow(image)
-    G = picture[:,:,1]
-    R = picture[:,:,3]
-    B = picture[:,:,2]
-    return(R, G, B)
-end
-image2display(image2)
+
+image2[:,:,3]= picture[:,:,1]
+image2[:,:,2]=picture[:,:,3]
+image2[:,:,1]=picture[:,:,2]
+image2
