@@ -7,6 +7,7 @@ size(picture)
 #Write a function that takes as input a string representing the filename, and
 #then loads the image file, displays it, and extracts the red, blue, and green
 #channels into separate variables, and returns those variables.
+
 #In other words, your function should take an image name as an argument and output
 # three separate variables, that in the case of our example image would each be a
 #360x640 matrix. Commit and push your file to the repository you just set up.
@@ -39,7 +40,6 @@ function picturedisplay(string)
     blue = picture[:,:,3]
     green = picture[:,:,2]
     return(red, green, blue)
-    println("BUG BUG BUG")
 end
 picturedisplay("el-capitan.png")
 
@@ -66,7 +66,6 @@ function picturedisplay(string)
     blue = picture[:,:,3]
     green = picture[:,:,2]
     return(red, green, blue)
-    println("BUG BUG BUG")
     println("Reset with git reset--mixed")
 end
 picturedisplay("el-capitan.png")
